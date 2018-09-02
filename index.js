@@ -35,4 +35,4 @@ app.post('/item/add', (req, res) => {
 
 const port = process.env.NM_PORT;
 
-app.listen(port, () => console.log(`Server running.....at portttrr88889999999jj838jjjj38 ${port}`));
+app.listen(port, () => console.log(`Server running.....at port ${port}`));
