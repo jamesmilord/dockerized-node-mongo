@@ -1,13 +1,13 @@
 FROM node:10
 
-WORKDIR /usr/src/app
+WORKDIR /code
 
-COPY package*.json ./
+RUN npm install -g nodemon
 
+COPY package.json /code/package.json
 RUN npm install
+RUN mv /code/node_modules /node_modules
 
-COPY . .
+COPY . /code
 
-EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

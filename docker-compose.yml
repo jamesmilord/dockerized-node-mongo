@@ -2,10 +2,14 @@ version: '3'
 services:
   app:
     container_name: docker-node-mongo
+    env_file:
+      - ./envs/local.env
     restart: always
     build: .
+    volumes:
+      - .:/code
     ports:
-      - '80:3000'
+      - '80:3005'
     links:
       - mongo
   mongo:
